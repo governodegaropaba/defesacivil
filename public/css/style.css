@@ -1,0 +1,924 @@
+body {font-family: Arial;}
+
+a:link {
+	text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
+
+#div1 {
+    display: flex;
+	width: 70%; 
+	table-layout: fixed;  
+	margin:auto; 
+	text-align: center;
+}
+
+.table1, th, td{ 
+	table-layout: fixed;  
+	margin:auto; 
+	text-align: center;	
+	border: solid 1px;
+	
+}
+
+	
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:284px;
+	}
+	
+	.titulo{
+		font-weight: bold;
+	}
+	
+	.ga24{
+		margin-top: 5px;
+		width: 10.5rem; 
+		text-align: center; 
+		margin-left: 280px;
+	}
+
+	.cd24{
+		width: 10.5rem; 
+		text-align: center; 
+		margin-left: 3px;
+	}	
+	
+	.ap24 {
+		width: 10.5rem; 
+		text-align: center; 
+		margin-left: 2px;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 148px;
+	}
+
+	.cd24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 18px;
+	}	
+	
+	.ap24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 14px;
+	}
+	
+	.amarelo{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: 280px;
+		left: 5px;
+	}
+
+	.laranja{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.vermelho{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.roxo{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 142px;
+		left: 5px;
+	}
+
+
+	.amarelo_1{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 5px;	
+	}
+
+	.laranja_1{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 19px;	
+	}
+
+	.vermelho_1{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 19px;	
+	}
+
+	.roxo_1{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 19px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 5px;	
+	}
+
+	.laranja_2{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 14px;	
+	}
+
+	.vermelho_2{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 14px;	
+	}
+
+	.roxo_2{
+		max-width: 10.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 14px;	
+	}
+	
+@media only screen and (max-width: 1366px) and (min-width: 788px) {
+	
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:284px;
+	}
+	
+	.titulo{
+		font-weight: bold;
+	}
+	
+	.ga24{
+		margin-top: 5px;
+		width: 12.5rem; 
+		text-align: center; 
+		margin-left: 150px;
+	}
+
+	.cd24{
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: 17px;
+	}	
+	
+	.ap24 {
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: 17px;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 148px;
+	}
+
+	.cd24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 18px;
+	}	
+	
+	.ap24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 14px;
+	}
+	
+	.amarelo{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: 142px;
+		left: 5px;
+	}
+
+	.laranja{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.vermelho{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.roxo{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 142px;
+		left: 5px;
+	}
+
+
+	.amarelo_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 19px;	
+	}
+
+	.laranja_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 19px;	
+	}
+
+	.vermelho_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 19px;	
+	}
+
+	.roxo_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 19px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 14px;	
+	}
+
+	.laranja_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 14px;	
+	}
+
+	.vermelho_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 14px;	
+	}
+
+	.roxo_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 14px;	
+	}
+}	
+
+/*	
+@media only screen and (max-width: 1366px) {
+	
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:284px;
+	}
+	
+	.titulo{
+		font-weight: bold;
+	}
+	
+	.ga24{
+		margin-top: 5px;
+		width: 12.5rem; 
+		text-align: center; 
+		margin-left: 150px;
+	}
+
+	.cd24{
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: 17px;
+	}	
+	
+	.ap24 {
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: 17px;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 148px;
+	}
+
+	.cd24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 18px;
+	}	
+	
+	.ap24sc{
+		width: 12.2rem; 
+		text-align: center; 
+		margin-left: 14px;
+	}
+	
+	.amarelo{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: 142px;
+		left: 5px;
+	}
+
+	.laranja{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.vermelho{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 142px;
+		left: 5px;	
+	}
+
+	.roxo{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 142px;
+		left: 5px;
+	}
+
+
+	.amarelo_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 19px;	
+	}
+
+	.laranja_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 19px;	
+	}
+
+	.vermelho_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 19px;	
+	}
+
+	.roxo_1{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 19px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 14px;	
+	}
+
+	.laranja_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 14px;	
+	}
+
+	.vermelho_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 14px;	
+	}
+
+	.roxo_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 14px;	
+	}
+}
+*/
+
+@media only screen and (max-width: 1200px) {
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:220px;"	
+	}
+	
+	.ga24{
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: 115px;
+	}
+
+	.cd24{
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: -13px;
+	}	
+	
+	.ap24 {
+		max-width: 12.5rem; 
+		text-align: center; 
+		margin-left: -16px;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 11.2rem; 
+		text-align: center; 
+		margin-left:124px;
+	}
+
+	.cd24sc{
+		width: 11.2rem; 
+		text-align: center; 
+		margin-left: 2px;
+	}	
+	
+	.ap24sc {
+		width: 11.2rem; 
+		text-align: center; 
+		margin-left: 1px;
+	}
+	
+	#fim{
+		margin-left: -51px;	
+	}
+	
+	#footer{
+		margin-left: -22px;
+	}
+	
+	.amarelo{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: 93px;	
+		left: 31px;
+	}
+
+	.laranja{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 93px;	
+		left: 31px;
+	}
+
+	.vermelho{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 93px;	
+		left: 31px;;	
+	}
+
+	.roxo{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 93px;	
+		left: 31px;
+	}
+
+
+	.amarelo_1{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 2px;	
+	}
+
+	.laranja_1{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 2px;	
+	}
+
+	.vermelho_1{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 2px;	
+	}
+
+	.roxo_1{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 2px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 11.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 1px;	
+	}
+
+	.laranja_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 1px;	
+	}
+
+	.vermelho_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 1px;	
+	}
+
+	.roxo_2{
+		max-width: 12.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 1px;	
+	}	
+	
+}	
+
+
+@media only screen and (max-width: 768px) {
+	
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:116px;"	
+	}
+	
+	.ga24{
+		display: none;
+	}
+
+	.cd24{
+		display: none;
+	}	
+	
+	.ap24 {
+		display: none;
+	}
+	
+	.ga24sc{
+		margin-top: 5px;
+		width: 7.2rem; 
+		text-align: center; 
+		margin-left: 102px;
+	}
+
+	.cd24sc{
+		width: 7.2rem; 
+		text-align: center; 
+		margin-left: 20px;
+	}	
+	
+	.ap24sc {
+		width: 7.2rem; 
+		text-align: center; 
+		margin-left: 18px;
+	}
+	
+	#fim{
+		margin-left: -172px;	
+	}
+	
+	#footer{
+		margin-left: -80px;
+	}
+	
+	.amarelo{
+		margin-top: 5px;
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: 71px;	
+	}
+
+	.laranja{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 71px;	
+	}
+
+	.vermelho{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 71px;	
+	}
+
+	.roxo{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 71px;	
+	}
+
+
+	.amarelo_1{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 19px;	
+	}
+
+	.laranja_1{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 19px;	
+	}
+
+	.vermelho_1{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 19px;	
+	}
+
+	.roxo_1{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 19px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 19px;	
+	}
+
+	.laranja_2{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 19px;	
+	}
+
+	.vermelho_2{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 19px;	
+	}
+
+	.roxo_2{
+		max-width: 7.2rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 19px;	
+	}	
+	
+}
+
+@media only screen and (max-width: 480px) {
+	.table1, th, td{
+		width: 100%; 
+		table-layout: fixed;  
+		margin:auto; 
+		text-align: center;	
+		border: solid 1px;
+		
+	}
+
+	#titulo{
+		text-align: center; 
+		padding-top: 20px; 
+		margin-left:4px;"	
+	}
+	
+	.titulo{
+		
+	}
+	
+	.ga24{
+		display: none;
+	}
+
+	.cd24{
+		display: none;
+	}	
+	
+	.ap24 {
+		display: none;;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 2px;
+	}
+
+	.cd24sc{
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 1px;
+	}	
+	
+	.ap24sc {
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 1px;
+	}
+	
+	#fim{
+		margin-left: -51px;	
+	}
+	
+	#footer{
+		margin-left: -80px;
+	}
+	
+	.amarelo{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: -30px;	
+	}
+
+	.laranja{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: 8px;	
+	}
+
+	.vermelho{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: 8px;	
+	}
+
+	.roxo{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: 8px;	
+	}
+
+
+	.amarelo_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 1px;	
+	}
+
+	.laranja_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 1px;	
+	}
+
+	.vermelho_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 1px;	
+	}
+
+	.roxo_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 1px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 2px;	
+	}
+
+	.laranja_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 2px;	
+	}
+
+	.vermelho_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 2px;	
+	}
+
+	.roxo_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left: 2px;	
+	}	
+}	
+
+
+
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+hr.new1 {
+  border: 1px solid red;
+}
+
+div {
+    display: inline-block;
+}

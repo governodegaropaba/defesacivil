@@ -1,0 +1,62 @@
+-- public.alerta_pcd definition
+
+-- Drop table
+
+-- DROP TABLE public.alerta_pcd;
+
+CREATE TABLE public.alerta_pcd (
+	id int4 NOT NULL DEFAULT nextval('alerta_pcd_key'::text::regclass),
+	cod_estacao varchar(20) NOT NULL,
+	nome varchar(50) NULL,
+	municipio varchar(20) NULL,
+	uf varchar(2) NULL,
+	latitude varchar(20) NULL,
+	longitude varchar(20) NULL,
+	datahora timestamp NOT NULL,
+	sensor varchar(40) NOT NULL,
+	valor numeric NOT NULL,
+	qualificacao bpchar(4) NULL,
+	horaok int2 NULL,
+	datahora_gmt timestamp NULL,
+	CONSTRAINT alerta_pcd_pkey4 PRIMARY KEY (cod_estacao, datahora, sensor, valor)
+);
+
+-- Permissions
+
+ALTER TABLE public.alerta_pcd OWNER TO postgres
+GRANT ALL ON TABLE public.alerta_pcd TO postgres
+
+
+
+
+-- public.alerta_pcd_historico definition
+
+-- Drop table
+
+-- DROP TABLE public.alerta_pcd_historico;
+
+CREATE TABLE public.alerta_pcd_historico (
+	id int4 NOT NULL,
+	cod_estacao varchar(20) NOT NULL,
+	nome varchar(50) NULL,
+	municipio varchar(20) NULL,
+	uf varchar(2) NULL,
+	latitude varchar(20) NULL,
+	longitude varchar(20) NULL,
+	datahora timestamp NOT NULL,
+	sensor varchar(40) NOT NULL,
+	valor numeric NOT NULL,
+	qualificacao bpchar(4) NULL,
+	horaok int2 NULL,
+	datahora_gmt timestamp NULL,
+	mes_ano bpchar(7) NULL,
+	mes varchar(2) NULL,
+	ano varchar(4) NULL,
+	"month" varchar(3) NULL,
+	CONSTRAINT alerta_pcd_pkey3_1 PRIMARY KEY (id, cod_estacao, datahora, sensor, valor)
+);
+
+-- Permissions
+
+ALTER TABLE public.alerta_pcd_historico OWNER TO postgres
+GRANT ALL ON TABLE public.alerta_pcd_historico TO postgres
