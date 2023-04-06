@@ -1,6 +1,6 @@
 # defesacivil
-Medição de pluviômetros para controle de volumes de chuvas.
-Tecnologias utilizadas: PHP e Python
+Medição de pluviômetros para controle de volumes de chuvas.<br>
+Tecnologias utilizadas: PHP e Python<br>
 Banco de dados: postgre
 Origem dos dados: http://sws.cemaden.gov.br
 Atualização dos dados é feita instantaneamente de minuto em minuto.
