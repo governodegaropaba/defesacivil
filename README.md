@@ -9,6 +9,6 @@ Em caso de as chuvas ultrapassarem limites pré-determinados, é enviado email p
 Existem gráficos demonstrativos para cada volume de chuvas registrados nas últimas 24h, 36h, 48h, 54h ao clicar nos relógios correspondentes. <br>
 
 Obs.: é necessário obter uma chave de acesso junto ao CEMADEN cadastrando um email e recebendo do CEMADEN uma senha para geração <br>
-de token que será usado na utilização das API´s.
+de token que será usado no consumo das API´s.
 
 
