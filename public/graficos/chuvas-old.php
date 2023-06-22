@@ -66,8 +66,8 @@ $date_36 = date("Y-m-d H:m:s", strtotime('-36 hours', time()));
 $date_48 = date("Y-m-d H:m:s", strtotime('-48 hours', time()));
 $date_54 = date("Y-m-d H:m:s", strtotime('-54 hours', time()));
 
-//$data_sql = "update alerta_pcd set datahora_gmt = datahora, horaok = 1, datahora = datahora - interval '3 hours' where horaok is null";
-//$data_sql_exec = pg_query($link, $data_sql);
+$data_sql = "update alerta_pcd set datahora_gmt = datahora, horaok = 1, datahora = datahora - interval '3 hours' where horaok is null";
+$data_sql_exec = pg_query($link, $data_sql);
 
 $gamboa_sql = "select * from public.alerta_pcd where cod_estacao = '420570401A' and datahora between '$date_54' and '$hoje'";
 $gamboa_exec = pg_query($link, $gamboa_sql);
@@ -258,9 +258,9 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/style.css" />  
 </head>
-<div class="container" >
+<div class="container" style="padding-left: 15%;">
 	<body>
-		<div id="titulo"><p class="titulo"><a href="index.php"><img src="../img/garopaba.png"></a>PREFEITURA MUNICIPAL DE GAROPABA/SC</p></div>
+		<div id="titulo"><a href="index.php"><img src="../img/garopaba.png"></a><p class="titulo">PREFEITURA MUNICIPAL DE GAROPABA/SC</p></div>
 		<div id="fim" style="padding-left: 15%">	
 			<a href="http://defesacivil.prefa.br/graficos/"><button type="submit" id="voltar" class="btn btn-success btn-sm">Voltar</button></a>
 		</div>
@@ -278,20 +278,18 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 				</ul>
 			  </div>
 			</nav>
-			<div class="container-fluid mt-3" >
-				
-				<h6>Monitoramento Pluviométrico</h6>
-				<p class="semchuva">Com dados do Cemaden - Centro Nacional de Monitoramento e Alertas de Desastres Naturais
+			<div class="container-fluid mt-3" style="padding-left: 20%">
+				<h5>Monitoramento Pluviométrico</h5>
+				<h5>Com dados do Cemaden - Centro Nacional de Monitoramento e Alertas de Desastres Naturais</br>
 				 Garopaba apresenta dados de monitoramento de índice de chuvas e precipitação.<br>				 
-				</p>
-				<p class="semregistro">Não há registro de chuvas nas últimas 54 horas para nenhuma das estações de monitoramento!</p>
+				</h5>
+				<h4 style="color: green; text-align: justify;">Não há registro de chuvas nas últimas 54 horas para<br> nenhuma das estações de monitoramento!</h4>
 				<footer>
-					<div id="footer" style="padding-left:23%; text-align: center;"><a href="https://garopaba.atende.net/" target="_blank"><p class="rodape1">Diretoria de Tecnologia da Informação - DTI - GAROPABA - JUNHO/2023</p></a></div>
+					<div id="footer" style="padding-left:41%; padding-top: 30px;text-align: center;"><a href="https://garopaba.atende.net/" target="_blank"><p>DTI - GAROPABA - JANEIRO/2023</p></a></div>
 				</footer>				
 			</div>
 		<?php }else{ ?>
-			<!--<h5 align="center"><font color="red"><b>SISTEMA EM TESTES<BR>DADOS FAKE</b></font></h5>-->
-			<h5 style="text-align: center; padding-top: 10px;">Monitoramento Pluviométrico</h5>
+			<h5 style="text-align: center; padding-top: 25px;">Monitoramento Pluviométrico</h5>
 	
 			<table class="table-sm table1" >
 				<thead>
@@ -332,7 +330,7 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 								echo "</div>";	
 							}else{
 								echo '<div class="card text-black mb-3 ga24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_ga).'</div>';
+									echo '<div class="card-header">Última leitura:<br> '.data_br($ud_ga).'</div>';
 								echo "</div>";								
 							}?>					
 					<?php 	if($volume_ga >= 0.2 and $volume_ga <= 70){ 	
@@ -443,7 +441,7 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 								echo "</div>";	
 							}else{
 								echo '<div class="card text-black mb-3 cd24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_cd).'</div>';
+									echo '<div class="card-header">Última leitura:<br> '.data_br($ud_cd).'</div>';
 								echo "</div>";								
 							}?>					
 					<?php 	if($volume_cd >= 0.2 and $volume_cd <= 70){ 	
@@ -554,7 +552,7 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 								echo "</div>";	
 							}else{
 								echo '<div class="card text-black mb-3 ap24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_ap).'</div>';
+									echo '<div class="card-header">Última leitura:<br> '.data_br($ud_ap).'</div>';
 								echo "</div>";								
 							}?>					
 					<?php 	if($volume_ap >= 0.2 and $volume_ap <= 70){ 	
@@ -660,15 +658,16 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 			</div>-->
 
 		<div id="fim" style="padding-left: 15%">
-			<div id="alerta" class="alerta"><img src="../img/alerta.png"><p class="Legenda">Legenda - Cores de alerta</p></div>
-			<br>
+		<div id="alerta" class="alerta"><img src="../img/alerta.png"><p class="Legenda">Legenda - Cores de alerta</p></div>
+		  <br>
 		  	<!--<h5 style="text-align: center; padding-top: 25px; color: red;">SISTEMA EM TESTES</h5>-->
-			<p class="semchuva">Com dados do Cemaden - Centro Nacional de Monitoramento e Alertas de Desastres Naturais</br>
-				Garopaba apresenta dados de monitoramento de índice de chuvas e precipitação.<br>				
-			</p>
+			  <p>Com dados do Cemaden - Centro Nacional de Monitoramento e Alertas de Desastres Naturais</br>
+				 Garopaba apresenta dados de monitoramento de índice de chuvas e precipitação.<br>
+				 <font color="red">**</font> Última leitura, refere-se a horário em que houve volume de chuva registrado.
+			  </p>
 		</div>
 		<footer>
-			<div id="footer" style="padding-left:23%; text-align: center;"><a href="https://garopaba.atende.net/" target="_blank"><p class="rodape">Diretoria de Tecnologia da Informação - DTI - GAROPABA - JUNHO/2023</p></a></div>
+			<div id="footer" style="padding-left:23%; text-align: center;"><a href="https://garopaba.atende.net/" target="_blank"><p>Diretoria de Tecnologia da Informação - DTI - GAROPABA - JANEIRO/2023</p></a></div>
 		</footer>
 		<?php } 
 		$link->close();

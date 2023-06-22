@@ -1,8 +1,10 @@
 import requests
 import psycopg2
 import json
+#import os
 import csv
 from csv import reader
+#import sys
 import datetime
 from requests.api import head
 from datetime import date
@@ -20,7 +22,7 @@ for x in range(1):
     pasta = "/sites/defesacivil/public/csv/"
     ### REALIZA LOGIN NO CEMADEN ###
     token_url = 'http://sgaa.cemaden.gov.br/SGAA/rest/controle-token/tokens'
-    login = {'email': 'seuemail@suaprefeitura.sc.gov.br', 'password': 'xxxxxxxx'}
+    login = {'email': 'defesacivil@garopaba.sc.gov.br', 'password': 'zSd720!nBa4@'}
     response = requests.post(token_url, json=login)
     content = response.json()
     token = content['token']
@@ -34,6 +36,7 @@ for x in range(1):
     print("Periodo "+str(ini)+" a "+str(fim))
     ### BUSCA DADOS DA GAMBOA ###
     sws_url='http://sws.cemaden.gov.br/PED/rest/pcds/dados_pcd?codigo=420570401A&fim='+fim+'&inicio='+ini+'&rede=11'
+    #print(f'URL: {sws_url}')
     params = dict(rede=11, uf='SC')
     r = requests.get(sws_url, params=params, headers={'token': token})
     data = r.text
@@ -119,12 +122,13 @@ for x in range(1):
         file = open(pasta+'finalh.csv')
         contents = csv.reader(file)
 
-        conn = psycopg2.connect(database="seudatabase",
-                                user='usuario', password='senha',
-                                host='seuhost', port='5432'
+        conn = psycopg2.connect(database="defesacivil",
+                                user='informatica', password='gsul@10',
+                                host='dbserver.prefa.br', port='5432'
                                 )
         conn.autocommit = True
-        cursor = conn.cursor()   
+        cursor = conn.cursor()
+        #print("Qtde:"+str(qtde));    
         for i in range(qtde):
             if(i>1 and list_of_rows[i][8] != '0.0'):
                 #print(list_of_rows[i])

@@ -10,33 +10,35 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/style.css" />  
 </head>
-<div class="container">
+
+<div class="menu">
 	<body>
-		<div style="text-align: center; padding-top: 20px;"><h5><img src="../img/garopaba.png">PREFEITURA MUNICIPAL DE GAROPABA/SC</h5></div>
-		<h5 style="text-align: center; padding-top: 25px;">DEFESA CIVIL - MENU</h5>
+		<div class="prefeitura"><img src="../img/garopaba.png">PREFEITURA MUNICIPAL DE GAROPABA/SC</div>
+		<p class="defesa">DEFESA CIVIL</p>
 		<br>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="collapse navbar-collapse" style="margin-left: 250px;" id="navbarTogglerDemo03">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active">
-						<a class="nav-link" style="font-size: 20px; padding-left: 35px" href="chuvas.php">Monitoramento de chuvas </a>
-						<a class="nav-link" href="chuvas.php"><img src="../img/chuva.jpg" style="width: 250px; padding-left: 35px;"></a>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div>
+				<ul>
+					<li>
+						<a class="titulo-chuvas" href="chuvas.php">Monitoramento de chuvas </a>
+						<a class="link-chuvas" href="chuvas.php"><img src="../img/icons8-chuva.gif" title="Clique para emitir o relatório"></a>
 					</li>					
 				</ul>
 			</div>	
-			<div class="collapse navbar-collapse" style="margin-left: -132px; margin-top: -50px;" id="navbarTogglerDemo03">	
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">  
-					<li class="nav-item">
-						<a class="nav-link" style="font-size: 20px; padding-left: 120px; padding-top: 30px;" href="historico.php">Histórico</a>
-						<a class="nav-link" href="historico.php"><img src="../img/historico.jpg" style="width: 250px; padding-left: 20px;"></a>
+			<div>	
+				<ul>  
+					<li>
+						<a class="titulo-historico" href="historico.php">Histórico</a>
+						<a class="link-historico" href="historico.php"><img src="../img/icons8-ampulheta.gif" title="Histórico de Chuvas. Clique para emitir o relatório"></a>
 					</li>
 				</ul>
 			</div>
 		</nav>	
-		<footer style="margin-top: 150px;">		
-			<a href="https://garopaba.atende.net/" target="_blank"><p align="center">DTI - GAROPABA - JANEIRO/2023</p></a>
+		<footer>		
+			<a href="https://garopaba.atende.net/" target="_blank"><p class="rodape">DIRETORIA DE TECNOLOGIA DA INFORMAÇÃO - DTI - GAROPABA - JANEIRO/2023</p></a>
 		</footer>
 	</body>
 </div>	
 </html>
+
 

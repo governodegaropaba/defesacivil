@@ -24,11 +24,53 @@ a:hover {
 	
 }
 
-	
-	#titulo{
+/* 1600 */
+
+@media screen and (max-width: 1600px) and (min-width: 900px) {
+
+	.menu{
+		border: 1px solid; 
+		margin-left: 250px; 
+		margin-top: 20px; 
+		width: 60%;
+	}
+
+	.prefeitura{
 		text-align: center; 
 		padding-top: 20px; 
-		margin-left:284px;
+		padding-left: 130px;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		padding-left: 80px;
+	}
+	
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
+	}
+	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 100px; 
+		padding-left: 20px;
 	}
 	
 	.titulo{
@@ -37,98 +79,98 @@ a:hover {
 	
 	.ga24{
 		margin-top: 5px;
-		width: 10.5rem; 
+		width: 10.2rem; 
 		text-align: center; 
-		margin-left: 280px;
+		margin-left: 394px;
 	}
 
 	.cd24{
-		width: 10.5rem; 
+		max-width: 10.2rem; 
 		text-align: center; 
-		margin-left: 3px;
+		margin-left: 5px;
 	}	
 	
 	.ap24 {
-		width: 10.5rem; 
+		max-width: 10.2rem; 
 		text-align: center; 
-		margin-left: 2px;
+		margin-left: 5px;
 	}
 
 	.ga24sc{
 		margin-top: 5px;
-		width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		margin-left: 148px;
 	}
 
 	.cd24sc{
-		width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		margin-left: 18px;
 	}	
 	
 	.ap24sc{
-		width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		margin-left: 14px;
 	}
 	
 	.amarelo{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		margin-left: 280px;
-		left: 5px;
+		margin-left: 290px;
+		left: 120px;
 	}
 
 	.laranja{
-		max-width: 10.2rem; 
+		width:8.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		margin-left: 142px;
-		left: 5px;	
+		margin-left: 290px;
+		left:120px;	
 	}
 
 	.vermelho{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: red; 
-		margin-left: 142px;
-		left: 5px;	
+		margin-left: 290px;
+		left: 120px;	
 	}
 
 	.roxo{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		margin-left: 142px;
-		left: 5px;
+		margin-left:290px;
+		left: 120px;
 	}
 
 
 	.amarelo_1{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 5px;	
+		left: 19px;	
 	}
 
 	.laranja_1{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: orange; 
 		left: 19px;	
 	}
 
 	.vermelho_1{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: red; 
 		left: 19px;	
 	}
 
 	.roxo_1{
-		max-width: 10.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
 		left: 19px;	
@@ -136,338 +178,281 @@ a:hover {
 
 
 	.amarelo_2{
-		max-width: 10.2rem; 
-		text-align: center; 
-		background-color: yellow; 
-		left: 5px;	
-	}
-
-	.laranja_2{
-		max-width: 10.2rem; 
-		text-align: center; 
-		background-color: orange; 
-		left: 14px;	
-	}
-
-	.vermelho_2{
-		max-width: 10.2rem; 
-		text-align: center; 
-		background-color: red; 
-		left: 14px;	
-	}
-
-	.roxo_2{
-		max-width: 10.2rem; 
-		text-align: center; 
-		background-color: #8A2BE2; 
-		left: 14px;	
-	}
-	
-@media only screen and (max-width: 1366px) and (min-width: 788px) {
-	
-	#titulo{
-		text-align: center; 
-		padding-top: 20px; 
-		margin-left:284px;
-	}
-	
-	.titulo{
-		font-weight: bold;
-	}
-	
-	.ga24{
-		margin-top: 5px;
-		width: 12.5rem; 
-		text-align: center; 
-		margin-left: 150px;
-	}
-
-	.cd24{
-		max-width: 12.5rem; 
-		text-align: center; 
-		margin-left: 17px;
-	}	
-	
-	.ap24 {
-		max-width: 12.5rem; 
-		text-align: center; 
-		margin-left: 17px;
-	}
-
-	.ga24sc{
-		margin-top: 5px;
-		width: 12.2rem; 
-		text-align: center; 
-		margin-left: 148px;
-	}
-
-	.cd24sc{
-		width: 12.2rem; 
-		text-align: center; 
-		margin-left: 18px;
-	}	
-	
-	.ap24sc{
-		width: 12.2rem; 
-		text-align: center; 
-		margin-left: 14px;
-	}
-	
-	.amarelo{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: yellow; 
-		margin-left: 142px;
-		left: 5px;
-	}
-
-	.laranja{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: orange; 
-		margin-left: 142px;
-		left: 5px;	
-	}
-
-	.vermelho{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: red; 
-		margin-left: 142px;
-		left: 5px;	
-	}
-
-	.roxo{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: #8A2BE2; 
-		margin-left: 142px;
-		left: 5px;
-	}
-
-
-	.amarelo_1{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: yellow; 
-		left: 19px;	
-	}
-
-	.laranja_1{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: orange; 
-		left: 19px;	
-	}
-
-	.vermelho_1{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: red; 
-		left: 19px;	
-	}
-
-	.roxo_1{
-		max-width: 12.2rem; 
-		text-align: center; 
-		background-color: #8A2BE2; 
-		left: 19px;	
-	}
-
-
-	.amarelo_2{
-		max-width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: yellow; 
 		left: 14px;	
 	}
 
 	.laranja_2{
-		max-width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: orange; 
 		left: 14px;	
 	}
 
 	.vermelho_2{
-		max-width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: red; 
 		left: 14px;	
 	}
 
 	.roxo_2{
-		max-width: 12.2rem; 
+		width: 8.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
 		left: 14px;	
+	}
+	
+	.alerta{
+		margin-left: 150px;	
 	}
 }	
 
-/*	
-@media only screen and (max-width: 1366px) {
-	
-	#titulo{
+/* 1366 */	
+@media screen and (max-width: 1366px) and (min-width: 768px) {
+
+	.menu{
+		border: 1px solid; 
+		margin-left: 250px; 
+		margin-top: 20px; 
+		width: 60%;
+	}
+
+	.prefeitura{
 		text-align: center; 
 		padding-top: 20px; 
-		margin-left:284px;
+		padding-left: 130px;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		padding-left: 80px;
+	}	
+	
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
 	}
 	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 100px; 
+		padding-left: 20px;
+	}
+		
 	.titulo{
 		font-weight: bold;
 	}
 	
 	.ga24{
-		margin-top: 5px;
-		width: 12.5rem; 
+		margin-top: 15px;
+		width: 9.2rem; 
 		text-align: center; 
-		margin-left: 150px;
+		margin-left: 309px;
 	}
 
 	.cd24{
-		max-width: 12.5rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
-		margin-left: 17px;
+		margin-left: 21px;
 	}	
 	
 	.ap24 {
-		max-width: 12.5rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
-		margin-left: 17px;
+		margin-left: 25px;
 	}
 
 	.ga24sc{
 		margin-top: 5px;
-		width: 12.2rem; 
+		width: 9.2rem; 
 		text-align: center; 
-		margin-left: 148px;
+		margin-left: 218px;
 	}
 
 	.cd24sc{
-		width: 12.2rem; 
+		width: 9.2rem; 
 		text-align: center; 
-		margin-left: 18px;
+		margin-left: 21px;
 	}	
 	
 	.ap24sc{
-		width: 12.2rem; 
+		width: 9.2rem; 
 		text-align: center; 
-		margin-left: 14px;
+		margin-left: 25px;
 	}
 	
 	.amarelo{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		margin-left: 142px;
-		left: 5px;
+		margin-left: 217px;
+		left: 100px;
 	}
 
 	.laranja{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		margin-left: 142px;
-		left: 5px;	
+		margin-left: 217px;
+		left: 100px;	
 	}
 
 	.vermelho{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: red; 
-		margin-left: 142px;
-		left: 5px;	
+		margin-left: 217px;
+		left: 100px;	
 	}
 
 	.roxo{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		margin-left: 142px;
-		left: 5px;
+		margin-left: 217px;
+		left: 100px;
 	}
 
 
 	.amarelo_1{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 19px;	
+		left: 28px;	
 	}
 
 	.laranja_1{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 19px;	
+		left: 28px;	
 	}
 
 	.vermelho_1{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 19px;	
+		left: 28px;	
 	}
 
 	.roxo_1{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 19px;	
+		left: 28px;	
 	}
 
 
 	.amarelo_2{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 14px;	
+		left: 28px;	
 	}
 
 	.laranja_2{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 14px;	
+		left: 28px;	
 	}
 
 	.vermelho_2{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 14px;	
+		left: 28px;	
 	}
 
 	.roxo_2{
-		max-width: 12.2rem; 
+		max-width: 9.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 14px;	
+		left: 28px;	
 	}
-}
-*/
+}	
 
 @media only screen and (max-width: 1200px) {
-	#titulo{
+	
+	.menu{
+		border: 1px solid; 
+		margin-left: 250px; 
+		margin-top: 20px; 
+		width: 60%;
+	}	
+	
+	.prefeitura{
 		text-align: center; 
 		padding-top: 20px; 
-		margin-left:220px;"	
+		padding-left: 130px;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		padding-left: 80px;
+	}
+
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
 	}
 	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 100px; 
+		padding-left: 20px;
+	}
+	
+	
 	.ga24{
-		max-width: 12.5rem; 
+		width: 11.2rem; 
 		text-align: center; 
 		margin-left: 115px;
 	}
 
 	.cd24{
-		max-width: 12.5rem; 
+		width: 11.2rem; 
 		text-align: center; 
 		margin-left: -13px;
 	}	
 	
 	.ap24 {
-		max-width: 12.5rem; 
+		width: 11.rem; 
 		text-align: center; 
 		margin-left: -16px;
 	}
@@ -591,15 +576,64 @@ a:hover {
 	
 }	
 
-
+/* 768 */
 @media only screen and (max-width: 768px) {
-	
-	#titulo{
+	.menu{
+		border: 1px solid; 
+		margin-left: 250px; 
+		margin-top: 20px; 
+		width: 60%;
+	}
+
+	.prefeitura{
 		text-align: center; 
 		padding-top: 20px; 
-		margin-left:116px;"	
+		padding-left: 130px;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		padding-left: 80px;
+	}
+
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
 	}
 	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 100px; 
+		padding-left: 20px;
+	}
+	
+	/* deficição css do histórico*/
+	.historico-titulo{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+
+	.historico-defesa{
+		
+	}
+		
 	.ga24{
 		display: none;
 	}
@@ -644,14 +678,14 @@ a:hover {
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		margin-left: 71px;	
+		margin-left: 91px;	
 	}
 
 	.laranja{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		margin-left: 71px;	
+		margin-left: 91px;	
 	}
 
 	.vermelho{
@@ -673,28 +707,28 @@ a:hover {
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 19px;	
+		left: 90px;	
 	}
 
 	.laranja_1{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 19px;	
+		left: 96px;	
 	}
 
 	.vermelho_1{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 19px;	
+		left: 94px;	
 	}
 
 	.roxo_1{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 19px;	
+		left: 94px;	
 	}
 
 
@@ -702,50 +736,139 @@ a:hover {
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 19px;	
+		left: 160px;	
 	}
 
 	.laranja_2{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 19px;	
+		left: 160px;	
 	}
 
 	.vermelho_2{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 19px;	
+		left: 160px;	
 	}
 
 	.roxo_2{
 		max-width: 7.2rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 19px;	
+		left: 160px;	
 	}	
 	
 }
 
-@media only screen and (max-width: 480px) {
+/* 480 */
+@media screen and (max-width: 480px) {
+	.container{
+		width: 100%!important;
+		margin-left: 1px!important;
+		margin-top: 12px!important;
+	}
+	.nave{
+		margin-left:130px;
+	}
+	/* definição css chuvas */
+	.menu{
+		border: 1px solid; 
+		margin-left: 0px; 
+		margin-top: 20px; 
+		width: 100%;
+	}
+
+	.prefeitura{
+		padding-top: 20px; 
+		padding-left: 0px;
+		font-size: 10px;
+		font-weight: bold;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		margin-left: -75px;
+	}
+
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
+	}
+	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 9px; 
+		font-size: 11px;
+		text-align: center;
+	}
+	
+	.rodape1{
+		margin-top: 9px; 
+		font-size: 10px;
+		text-align: center;
+	}
+	
+	.semchuva{
+		font-size: 14px;
+		margin-left: 1px;
+	}
+	
+	.semregistro{
+		color: green; 
+		text-align: justify;
+	}
+	/* deficição css do histórico*/
+	.historico-titulo{
+		font-size: 14px; 
+		padding-left: 0px; 
+		padding-top: 1px;
+	}
+
+	.historico-defesa{
+		font-size: 14px;
+		text-align: center;
+	}
+	
+	.anos{
+		font-size: 10px; 
+		color: navy; 
+		width: 10%;
+	}
+		
 	.table1, th, td{
 		width: 100%; 
 		table-layout: fixed;  
 		margin:auto; 
 		text-align: center;	
-		border: solid 1px;
-		
+		border: solid 1px;		
 	}
 
-	#titulo{
-		text-align: center; 
-		padding-top: 20px; 
-		margin-left:4px;"	
+	.estatistica{
+		display: none;
 	}
-	
+
 	.titulo{
-		
+		font-size: 11px;
+		font-weight: bold;
+		text-align: left;
 	}
 	
 	.ga24{
@@ -791,28 +914,28 @@ a:hover {
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: yellow; 
-		margin-left: -30px;	
+		margin-left: -12px;	
 	}
 
 	.laranja{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: orange; 
-		margin-left: 8px;	
+		margin-left: -20px;	
 	}
 
 	.vermelho{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: red; 
-		margin-left: 8px;	
+		margin-left: -20px;	
 	}
 
 	.roxo{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		margin-left: 8px;	
+		margin-left: -20px;	
 	}
 
 
@@ -820,28 +943,28 @@ a:hover {
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 1px;	
+		left: 58px;	
 	}
 
 	.laranja_1{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 1px;	
+		left: 51px;	
 	}
 
 	.vermelho_1{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 1px;	
+		left: 43px;	
 	}
 
 	.roxo_1{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 1px;	
+		left: 43px;	
 	}
 
 
@@ -849,32 +972,266 @@ a:hover {
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: yellow; 
-		left: 2px;	
+		left: 88px;	
 	}
 
 	.laranja_2{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: orange; 
-		left: 2px;	
+		left:76px;	
 	}
 
 	.vermelho_2{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: red; 
-		left: 2px;	
+		left: 56px;	
 	}
 
 	.roxo_2{
 		max-width: 7.0rem; 
 		text-align: center; 
 		background-color: #8A2BE2; 
-		left: 2px;	
+		left: 56px;	
 	}	
 }	
 
 
+/* 390 */
+@media screen and (max-width: 390px) {
+	.container{
+		width: 100%!important;
+		margin-left: 1px!important;
+		margin-top: 12px!important;
+	}
+	.nave{
+		margin-left:130px;
+	}
+	/* definição css chuvas */
+	.menu{
+		border: 1px solid; 
+		margin-left: 0px; 
+		margin-top: 20px; 
+		width: 100%;
+	}
+
+	.prefeitura{
+		padding-top: 20px; 
+		padding-left: 0px;
+		font-size: 10px;
+		font-weight: bold;
+	}
+
+	.defesa{
+		text-align: center; 
+		padding-top: 25px; 
+		margin-left: -75px;
+	}
+
+	.titulo-chuvas{
+		font-size: 20px; 
+		padding-left: 35px;
+	}
+	
+	.link-chuvas{
+		width: 200px; 
+		padding-left: 35px;
+	}
+	
+	.titulo-historico{
+		font-size: 20px; 
+		padding-left: 70px; 
+		padding-top: 1px;
+	}
+	
+	.link-historico{
+		width: 150px; 
+		padding-left: 45px;		
+	}
+	
+	.rodape{
+		margin-top: 9px; 
+		font-size: 11px;
+		text-align: center;
+	}
+	
+	.rodape1{
+		margin-top: 9px; 
+		font-size: 10px;
+		text-align: center;
+	}
+	
+	.semchuva{
+		font-size: 14px;
+		margin-left: 1px;
+	}
+	
+	.semregistro{
+		color: green; 
+		text-align: justify;
+	}
+	/* deficição css do histórico*/
+	.historico-titulo{
+		font-size: 14px; 
+		padding-left: 0px; 
+		padding-top: 1px;
+	}
+
+	.historico-defesa{
+		font-size: 14px;
+		text-align: center;
+	}
+	
+	.anos{
+		font-size: 10px; 
+		color: navy; 
+		width: 10%;
+	}
+		
+	.table1, th, td{
+		width: 100%; 
+		table-layout: fixed;  
+		margin:auto; 
+		text-align: center;	
+		border: solid 1px;		
+	}
+
+	.estatistica{
+		display: none;
+	}
+
+	.titulo{
+		font-size: 11px;
+		font-weight: bold;
+		text-align: left;
+	}
+	
+	.ga24{
+		display: none;
+	}
+
+	.cd24{
+		display: none;
+	}	
+	
+	.ap24 {
+		display: none;;
+	}
+
+	.ga24sc{
+		margin-top: 5px;
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 2px;
+	}
+
+	.cd24sc{
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 1px;
+	}	
+	
+	.ap24sc {
+		width: 7.0rem; 
+		text-align: center; 
+		margin-left: 1px;
+	}
+	
+	#fim{
+		margin-left: -52px;	
+	}
+	
+	#footer{
+		margin-left: -80px;
+	}
+	
+	.amarelo{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		margin-left: -22px;	
+	}
+
+	.laranja{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		margin-left: -22px;	
+	}
+
+	.vermelho{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		margin-left: -22px;	
+	}
+
+	.roxo{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		margin-left: -22px;	
+	}
+
+
+	.amarelo_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 52px;	
+	}
+
+	.laranja_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 40px;	
+	}
+
+	.vermelho_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		left: 34px;	
+	}
+
+	.roxo_1{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left:34px;	
+	}
+
+
+	.amarelo_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: yellow; 
+		left: 70px;	
+	}
+
+	.laranja_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: orange; 
+		left: 49px;	
+	}
+
+	.vermelho_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: red; 
+		left:39px;	
+	}
+
+	.roxo_2{
+		max-width: 7.0rem; 
+		text-align: center; 
+		background-color: #8A2BE2; 
+		left:39px;	
+	}	
+}	
 
 
 /* Style the tab */
@@ -921,4 +1278,8 @@ hr.new1 {
 
 div {
     display: inline-block;
+}
+
+li {
+  list-style-type: none;
 }

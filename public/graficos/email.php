@@ -8,8 +8,8 @@ $Vai = "Remetente: $nome\n\nAlerta: $alerta\n\n";
 
 require_once("phpmailer/class.phpmailer.php");
 
-define('GUSER', 'xxxx@xxxxxxx.sc.gov.br');	// <-- Insira aqui o seu GMail
-define('GPWD', '202xxxx0.xxxx');		// <-- Insira aqui a senha do seu GMail
+define('GUSER', 'dev@garopaba.sc.gov.br');	// <-- Insira aqui o seu GMail
+define('GPWD', '2020.acaba');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;
@@ -19,7 +19,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 	$mail->SMTPAuth = true;		// Autenticação ativada
 	$mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
-	$mail->Host = 'smtp.xxxxxxx.org.br';	// SMTP utilizado
+	$mail->Host = 'smtp.fecamsc.org.br';	// SMTP utilizado
 	$mail->Port = 465;  		// A porta 465 deverá estar aberta em seu servidor
 	$mail->Username = GUSER;
 	$mail->Password = GPWD;
@@ -39,7 +39,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 // nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
 
- if (smtpmailer('destino@gmail.com', 'xxxx@xxxxxxx.sc.gov.br', 'DTI - GAROPABA/SC', 'Alerta de Chuva', $Vai)) {
+ if (smtpmailer('luispaglioza@gmail.com', 'dev@garopaba.sc.gov.br', 'DTI - GAROPABA/SC', 'Alerta de Chuva', $Vai)) {
 
 	echo "Email de alerta enviado!";
 

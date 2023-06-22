@@ -1,4 +1,5 @@
 # Defesa Civil
+GAROPABA - SC
 Medição de pluviômetros para controle de volumes de chuvas.<br>
 Tecnologias utilizadas: PHP e Python<br>
 Banco de dados: postgre
@@ -11,5 +12,8 @@ Existem gráficos demonstrativos para cada volume de chuvas registrados nas últ
 
 Obs.: é necessário obter uma chave de acesso junto ao CEMADEN cadastrando um email e recebendo do CEMADEN uma senha para geração <br>
 de token que será usado no consumo das API´s.
+
+<img src="figura.png">
+<img src="grafico.png">
 
 

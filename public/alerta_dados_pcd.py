@@ -11,7 +11,7 @@ from requests.api import head
 pasta = "/sites/defesacivil/public/csv/"
 ### REALIZA LOGIN NO CEMADEN ###
 token_url = 'http://sgaa.cemaden.gov.br/SGAA/rest/controle-token/tokens'
-login = {'email': 'seuemail@suaprefeitura.gov.br', 'password': 'xxxxxxxxxxx'}
+login = {'email': 'defesacivil@garopaba.sc.gov.br', 'password': 'zSd720!nBa4@'}
 response = requests.post(token_url, json=login)
 content = response.json()
 token = content['token']
@@ -31,6 +31,7 @@ fim = ano+mes+dia+'2359'
 
 ### BUSCA DADOS DA GAMBOA ###
 sws_url='http://sws.cemaden.gov.br/PED/rest/pcds/dados_pcd?codigo=420570401A&fim='+fim+'&inicio='+ini+'&rede=11'
+#print(f'URL: {sws_url}')
 params = dict(rede=11, uf='SC')
 r = requests.get(sws_url, params=params, headers={'token': token})
 data = r.text
@@ -54,7 +55,6 @@ with open(pasta+"fase1.csv", "w") as f:
 
 text = open(pasta+"fase1.csv", "r")
 
-#RETIRANDO ; DO FINAL DA LINHA
 text = ''.join([i for i in text]) \
     .replace(";0000;", ";0000")
 
@@ -90,13 +90,13 @@ try:
                 if line.find('0.0;') == -1:
                     fw.write(line)
 except:
-    print("Erro! Alguma coisa saiu errada")
+    print("Oops! ocorreu erro")
 
 try:
     with open(pasta+'final.csv', 'r') as fr:
         lines = fr.readlines()
 except:
-    print("Erro! Alguma coisa saiu errada")
+    print("Oops! ocorreu erro aqui")
 
 with open(pasta+'final.csv', 'r') as csv_file:
     linhas = csv_file.read().splitlines()
@@ -104,20 +104,23 @@ with open(pasta+'final.csv', 'r') as csv_file:
     list_of_rows = list(csv_reader)
     ### ELIMINA 3 ÚLTIMAS LINHAS QUE VEM EM BRANCO ###
     qtde = len(list_of_rows)
+    #print('qtde->',qtde)
     file = open(pasta+'final.csv')
     contents = csv.reader(file)
 
-    #CONECTA BANCO DE DADOS POSTGRE PARA SALVAR DADOS DO ARQUIVO CSV
-    conn = psycopg2.connect(database="seudatabase",
-                            user='usuario', password='senha',
-                            host='seuhost', port='5432'
+    conn = psycopg2.connect(database="defesacivil",
+                            user='informatica', password='gsul@10',
+                            host='dbserver.prefa.br', port='5432'
                             )
     conn.autocommit = True
     cursor = conn.cursor()
 
     for i in range(qtde):
         if(i>=0 and list_of_rows[i][8] != '0.0'):
+            #print(list_of_rows[i])
             v_cod_estacao = list_of_rows[i][0]
+            #if (v_cod_estacao == '420570401A'):
+            #    print(qtde)
             v_nome = list_of_rows[i][1]
             v_municipio = list_of_rows[i][2]
             v_uf = list_of_rows[i][3]
@@ -127,11 +130,13 @@ with open(pasta+'final.csv', 'r') as csv_file:
             v_sensor = list_of_rows[i][7]
             v_valor = list_of_rows[i][8]
             v_qualificacao = list_of_rows[i][9]
-            seleciona = "SELECT municipio FROM alerta_pcd WHERE datahora_gmt = '"+v_datahora+"' and valor = "+v_valor+" and sensor = '"+v_sensor+"'"
+            seleciona = "SELECT municipio FROM alerta_pcd WHERE cod_estacao = '"+v_cod_estacao+"' and datahora_gmt = '"+v_datahora+"' and valor = "+v_valor+" and sensor = '"+v_sensor+"'"
+            #print(seleciona)
             cursor.execute(seleciona)
             resultado = cursor.fetchall()
+            #print(len(resultado))
             if len(resultado)==0:  #Verifica se o retorno contém alguma linha
-                #insere registros no banco de dados
+                #print('inserindo')
                 cursor.execute("INSERT INTO public.alerta_pcd (cod_estacao, nome, municipio, uf, latitude, longitude, datahora, sensor, valor, qualificacao) VALUES(%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)",(v_cod_estacao, v_nome, v_municipio, v_uf, v_latitude, v_longitude, v_datahora, v_sensor, v_valor, v_qualificacao))
 conn.commit()
 conn.close()

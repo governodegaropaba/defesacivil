@@ -74,6 +74,7 @@ function data_hr($data){
  ['class Name',''],
  <?php 
 	$query1 = "select cod_estacao, sum(valor) as qtde from public.alerta_pcd where cod_estacao = '$estacao' and sensor = 'chuva' and datahora between '$menor_data' and '$maior_data' group by cod_estacao";
+	
 	$exec1 = pg_query($link,$query1);
 	while($row1 = pg_fetch_assoc($exec1)){
 		$volume = $row1['qtde'];	
