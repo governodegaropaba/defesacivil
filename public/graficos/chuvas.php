@@ -15,10 +15,10 @@ function alertas($qtde, $volume, $cor, $ud, $estacao, $periodo, $local){
 
 		$corpo = "Remetente: $nome\n\nAlerta: $alerta\n\n";
 
-		require_once("phpmailer/class.phpmailer.php");
+		require 'PHPMailer/lib/vendor/autoload.php';
 
 		define('GUSER', 'dev@garopaba.sc.gov.br');	// <-- Insira aqui o seu GMail
-		define('GPWD', '2020.acaba');		// <-- Insira aqui a senha do seu GMail
+		define('GPWD', 'Dev@2023');		// <-- Insira aqui a senha do seu GMail
 		
 		$assunto = "Alerta ".$cor." - ".$local;
 		
@@ -37,7 +37,7 @@ function alertas($qtde, $volume, $cor, $ud, $estacao, $periodo, $local){
 			$mail->SetFrom($de, $de_nome);
 			$mail->Subject = $assunto;
 			$mail->Body = $corpo;
-			$mail->AddAddress('luispaglioza@gmail.com');
+			$mail->AddAddress('luisarmando@garopaba.sc.gov.br');
 			$mail->AddCC('defesacivil@garopaba.sc.gov.br');
 			if(!$mail->Send()) {
 				$error = 'Mail error: '.$mail->ErrorInfo;
@@ -323,343 +323,219 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 						<td><a class="nav-link" style="font-size: 1.6rem; color: navy;" href="graficos.php?id=3d&h=54" target="_blank"> <img src="../img/54h.png" width="60px" title="Visualizar gráfico"></a></td>
 					</tr>
 			</table>
+			<br>
+					
+			<table class="table-sm table1" >							
+					<?php 
+					echo '<tr>';
+						echo '<td width="173px">';
+							echo 'Último registro de <br>chuva: '.data_br($ud_ga);
+						echo "</td>";
+						echo '<td width="173px">';
+							echo 'Último registro de <br>chuva: '.data_br($ud_cd);
+						echo "</td>";
+						echo '<td width="173px">';
+							echo 'Último registro de <br>chuva: '.data_br($ud_ap);
+						echo "</td>";						
+					echo '</tr>';
+					?>
+					<!---------------------------------------- ALERTAS 24 HORAS ------------------------------------>
+					<?php
+					echo '<tr>';
+							if($volume_ga == 0){ 
+								echo '<td>0 mm  24h</td>';
+							}				
+							if($volume_ga >= 0.2 and $volume_ga <= 70){ 	
+									echo '<td class="amarelo">'.number_format($volume_ga, 2, '.', '').' mm/24h</td>';										
+								}
+							if($volume_cd >= 0.2 and $volume_cd <= 70){ 	
+									echo '<td class="amarelo">'.number_format($volume_cd, 2, '.', '').' mm/24h</td>';									
+								}
+							if($volume_ap >= 0.2 and $volume_ap <= 70){ 	
+									echo '<td class="amarelo">'.number_format($volume_ap, 2, '.', '').' mm/24h</td>';									
+								}
+							if($volume_ga > 70 and $volume_ga <= 100){ 
+									echo '<td class="laranja">'.number_format($volume_ga, 2, '.', '').' mm/24h</td>';									
+								}	
+							if($volume_ga > 100 and $volume_ga <= 150){ 		
+									echo '<td class="vermelho">'.number_format($volume_ga, 2, '.', '').' mm/24h</td>';									
+								}
+							if($volume_ga > 150){ 	
+									echo '<td class="roxo">'.number_format($volume_ga, 2, '.', '').' mm/24h</td>';								
+								}  
+							if($volume_cd > 70 and $volume_cd <= 100){ 
+									echo '<td class="laranja">'.number_format($volume_cd, 2, '.', '').' mm/24h</td>';									
+								}	
+							if($volume_cd > 100 and $volume_cd <= 150){ 		
+									echo '<td class="vermelho">'.number_format($volume_cd, 2, '.', '').' mm/24h</td>';									
+								}	
+							if($volume_cd > 150){ 	
+									echo '<td class="roxo">'.number_format($volume_cd, 2, '.', '').' mm/24h</td>';									
+								}  
+							if($volume_ap > 70 and $volume_ap <= 100){ 
+									echo '<td class="laranja">'.number_format($volume_ap, 2, '.', '').' mm/24h</td>';									
+								}	
+							if($volume_ap > 100 and $volume_ap <= 150){ 		
+									echo '<td class="vermelho">'.number_format($volume_ap, 2, '.', '').' mm/24h</td>';									
+								}	
+							if($volume_ap > 150){ 	
+									echo '<td class="roxo">'.number_format($volume_ap, 2, '.', '').' mm/24h</td>';									
+								} 
+					echo '</tr>';		
+					?>	
+					<!---------------------------------------- ALERTAS 36 HORAS ------------------------------------>					
+					<?php
+					echo '<tr>';	
+							if($volume_ga_36 == 0){ 	
+								echo '<td>0 mm  36h</td>';;										
+							}
+						    if($volume_ga_36 >= 0.2 and $volume_ga_36 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</td>';;									
+							}							
+						 	if($volume_ga_36 > 70 and $volume_ga_36 <= 100){ 		
+								echo '<td class="laranaja">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</td>';;															
+							}	
+						 	if($volume_ga_36 > 100 and $volume_ga_36 <= 150){ 
+								echo '<td class="vemelho">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</td>';;									
+							}
+							if($volume_ga_36 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</td>';;									
+							}
+							if($volume_cd_36 == 0){ 	
+								echo '<td>0 mm  36h</td>';;										
+							}
+						    if($volume_cd_36 >= 0.2 and $volume_cd_36 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</td>';;									
+							}							
+						 	if($volume_cd_36 > 70 and $volume_cd_36 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</td>';;															
+							}	
+						 	if($volume_cd_36 > 100 and $volume_cd_36 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</td>';;									
+							}
+							if($volume_cd_36 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</td>';;									
+							}		
+							if($volume_ap_36 == 0){ 	
+								echo '<td>0 mm  36h</td>';;										
+							}
+						    if($volume_ap_36 >= 0.2 and $volume_ap_36 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</td>';;									
+							}							
+						 	if($volume_ap_36 > 70 and $volume_ap_36 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</td>';;															
+							}	
+						 	if($volume_ap_36 > 100 and $volume_ap_36 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</td>';;									
+							}
+							if($volume_ap_36 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</td>';;									
+							}							
+					echo '</tr>';
+					?>
+					<!---------------------------------------- ALERTAS 48 HORAS ------------------------------------>					
+					<?php
+					echo '<tr>';	
+							if($volume_ga_48 == 0){ 	
+								echo '<td>0 mm  48h</td>';;										
+							}
+						    if($volume_ga_48 >= 0.2 and $volume_ga_48 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</td>';;									
+							}							
+						 	if($volume_ga_48 > 70 and $volume_ga_48 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</td>';;															
+							}	
+						 	if($volume_ga_48 > 100 and $volume_ga_48 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</td>';;									
+							}
+							if($volume_ga_48 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</td>';;									
+							}
+							if($volume_cd_48 == 0){ 	
+								echo '<td>0 mm  48h</td>';;										
+							}
+						    if($volume_cd_48 >= 0.2 and $volume_cd_48 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</td>';;									
+							}							
+						 	if($volume_cd_48 > 70 and $volume_cd_48 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</td>';;															
+							}	
+						 	if($volume_cd_48 > 100 and $volume_cd_48 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</td>';;									
+							}
+							if($volume_cd_48 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</td>';;									
+							}		
+							if($volume_ap_48 == 0){ 	
+								echo '<td>0 mm  48h</td>';;										
+							}
+						    if($volume_ap_48 >= 0.2 and $volume_ap_48 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</td>';;									
+							}							
+						 	if($volume_ap_48 > 70 and $volume_ap_48 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</td>';;															
+							}	
+						 	if($volume_ap_48 > 100 and $volume_ap_48 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</td>';;									
+							}
+							if($volume_ap_48 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</td>';;									
+							}							
+					echo '</tr>';
+					?>	
+					<!---------------------------------------- ALERTAS 54 HORAS ------------------------------------>					
+					<?php
+					echo '<tr>';	
+							if($volume_ga_54 == 0){ 	
+								echo '<td>0 mm  54h</td>';;										
+							}
+						    if($volume_ga_54 >= 0.2 and $volume_ga_54 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</td>';;									
+							}							
+						 	if($volume_ga_54 > 70 and $volume_ga_54 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</td>';;															
+							}	
+						 	if($volume_ga_54 > 100 and $volume_ga_54 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</td>';;									
+							}
+							if($volume_ga_54 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</td>';;									
+							}
+							if($volume_cd_54 == 0){ 	
+								echo '<td>0 mm  54h</td>';;										
+							}
+						    if($volume_cd_54 >= 0.2 and $volume_cd_54 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</td>';;									
+							}							
+						 	if($volume_cd_54 > 70 and $volume_cd_54 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</td>';;															
+							}	
+						 	if($volume_cd_54 > 100 and $volume_cd_54 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</td>';;									
+							}
+							if($volume_cd_54 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</td>';;									
+							}		
+							if($volume_ap_54 == 0){ 	
+								echo '<td>0 mm  54h</td>';;										
+							}
+						    if($volume_ap_54 >= 0.2 and $volume_ap_54 <= 70){ 	
+								echo '<td class="amarelo">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</td>';;									
+							}							
+						 	if($volume_ap_54 > 70 and $volume_ap_54 <= 100){ 		
+								echo '<td class="laranja">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</td>';;															
+							}	
+						 	if($volume_ap_54 > 100 and $volume_ap_54 <= 150){ 
+								echo '<td class="vermelho">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</td>';;									
+							}
+							if($volume_ap_54 > 150){ 		
+								echo '<td class="roxo">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</td>';;									
+							}							
+					echo '</tr>';
+					?>					
+			</table>	
 
-				<div>
-					<!---------------------------------------- ALERTAS 24 HORAS -------------------------------------------->
-					<?php 	if($volume_ga == 0){ 
-								echo '<div class="card text-black mb-3 ga24sc">';
-									echo '<p class="card-text">0 mm  24h</p>';
-								echo "</div>";	
-							}else{
-								echo '<div class="card text-black mb-3 ga24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_ga).'</div>';
-								echo "</div>";								
-							}?>					
-					<?php 	if($volume_ga >= 0.2 and $volume_ga <= 70){ 	
-								echo '<div class="card text-black mb-3 amarelo">';
-									echo '<p class="card-text">'.number_format($volume_ga, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';		
-							}?>
-					<?php 	if($volume_ga > 70 and $volume_ga <= 100){ 
-								echo '<div class="card text-black mb-3 laranja">';
-									echo '<p class="card-text">'.number_format($volume_ga, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';
-							}?>	
-					<?php 	if($volume_ga > 100 and $volume_ga <= 150){ 		
-							echo '<div class="card text-black mb-3 vermelho">';
-								echo '<p class="card-text">'.number_format($volume_ga, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ga > 150){ 	
-							echo '<div class="card text-black mb-3 roxo">';
-								echo '<p class="card-text">'.number_format($volume_ga, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>								
-					<!---------------------------------------- ALERTAS 36 HORAS -------------------------------------------->
-					<?php if($volume_ga_36 == 0){ 	
-							echo '<div class="card text-black mb-3 ga24sc">';
-								echo '<p class="card-text">0 mm  36h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ga_36 >= 0.2 and $volume_ga_36 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo">';
-								echo '<p class="card-text">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ga_36 > 70 and $volume_ga_36 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja">';
-								echo '<p class="card-text">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ga_36 > 100 and $volume_ga_36 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho">';
-								echo '<p class="card-text">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ga_36 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo">';
-								echo '<p class="card-text">'.number_format($volume_ga_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<!---------------------------------------- ALERTAS 48 HORAS -------------------------------------------->
-					<?php if($volume_ga_48 == 0){ 	
-							echo '<div class="card text-black mb-3 ga24sc">';
-								echo '<p class="card-text">0 mm  48h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ga_48 >= 0.2 and $volume_ga_48 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo">';
-								echo '<p class="card-text">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ga_48 > 70 and $volume_ga_48 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja">';
-								echo '<p class="card-text">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ga_48 > 100 and $volume_ga_48 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho">';
-								echo '<p class="card-text">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ga_48 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo">';
-								echo '<p class="card-text">'.number_format($volume_ga_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>		
-					<!---------------------------------------- ALERTAS 54 HORAS -------------------------------------------->
-					<?php if($volume_ga_54 == 0){ 	
-							echo '<div class="card text-black mb-3 ga24sc">';
-								echo '<p class="card-text">0 mm  54h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ga_54 >= 0.2 and $volume_ga_54 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo">';
-								echo '<p class="card-text">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ga_54 > 70 and $volume_ga_54 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja">';
-								echo '<p class="card-text">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ga_54 > 100 and $volume_ga_54 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho">';
-								echo '<p class="card-text">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ga_54 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo">';
-								echo '<p class="card-text">'.number_format($volume_ga_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>	
-				</div>
-				<div>	
-					<!---------------------------------------- DEFINIÇÕES CAMPO DUNA---------------------------------------->	
-					<!---------------------------------------- ALERTAS 24 HORAS -------------------------------------------->
-					<?php 	if($volume_cd == 0){ 
-								echo '<div class="card text-black mb-3 cd24sc" >';
-									echo '<p class="card-text">0 mm  24h</p>';
-								echo "</div>";	
-							}else{
-								echo '<div class="card text-black mb-3 cd24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_cd).'</div>';
-								echo "</div>";								
-							}?>					
-					<?php 	if($volume_cd >= 0.2 and $volume_cd <= 70){ 	
-								echo '<div class="card text-black mb-3 amarelo_1">';
-									echo '<p class="card-text">'.number_format($volume_cd, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';		
-							}?>
-					<?php 	if($volume_cd > 70 and $volume_cd <= 100){ 
-								echo '<div class="card text-black mb-3 laranja_1">';
-									echo '<p class="card-text">'.number_format($volume_cd, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';
-							}?>	
-					<?php 	if($volume_cd > 100 and $volume_cd <= 150){ 		
-							echo '<div class="card text-black mb-3 vermelho_1">';
-								echo '<p class="card-text">'.number_format($volume_cd, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_cd > 150){ 	
-							echo '<div class="card text-black mb-3 roxo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>								
-					<!---------------------------------------- ALERTAS 36 HORAS -------------------------------------------->
-					<?php if($volume_cd_36 == 0){ 	
-							echo '<div class="card text-black mb-3 cd24sc">';
-								echo '<p class="card-text">0 mm  36h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_cd_36 >= 0.2 and $volume_cd_36 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_cd_36 > 70 and $volume_cd_36 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_cd_36 > 100 and $volume_cd_36 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_cd_36 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<!---------------------------------------- ALERTAS 48 HORAS -------------------------------------------->
-					<?php if($volume_cd_48 == 0){ 	
-							echo '<div class="card text-black mb-3 cd24sc">';
-								echo '<p class="card-text">0 mm 48h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_cd_48 >= 0.2 and $volume_cd_48 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_cd_48 > 70 and $volume_cd_48 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_cd_48 > 100 and $volume_cd_48 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_cd_48 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>		
-					<!---------------------------------------- ALERTAS 54 HORAS -------------------------------------------->
-					<?php if($volume_cd_54 == 0){ 	
-							echo '<div class="card text-black mb-3 cd24sc">';
-								echo '<p class="card-text">0 mm  54h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_cd_54 >= 0.2 and $volume_cd_54 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_cd_54 > 70 and $volume_cd_54 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_cd_54 > 100 and $volume_cd_54 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_cd_54 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_1">';
-								echo '<p class="card-text">'.number_format($volume_cd_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>
-				</div>
-				<div>
-					<!---------------------------------------- DEFINIÇÕES AREIAS DE PALHOCINHA ----------------------------->				
-					<!---------------------------------------- ALERTAS 24 HORAS -------------------------------------------->
-					<?php if($volume_ap == 0){ 
-								echo '<div class="card text-black mb-3 ap24sc">';
-									echo '<p class="card-text">0 mm  24h</p>';
-								echo "</div>";	
-							}else{
-								echo '<div class="card text-black mb-3 ap24">';
-									echo '<div class="card-header">Último registro de chuva:<br> '.data_br($ud_ap).'</div>';
-								echo "</div>";								
-							}?>					
-					<?php 	if($volume_ap >= 0.2 and $volume_ap <= 70){ 	
-								echo '<div class="card text-black mb-3 amarelo_2">';
-									echo '<p class="card-text">'.number_format($volume_ap, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';		
-							}?>
-					<?php 	if($volume_ap > 70 and $volume_ap <= 100){ 
-								echo '<div class="card text-black mb-3 laranja_2">';
-									echo '<p class="card-text">'.number_format($volume_ap, 2, '.', '').' mm/24h</p>';;									
-								echo '</div>';
-							}?>	
-					<?php 	if($volume_ap > 100 and $volume_ap <= 150){ 		
-							echo '<div class="card text-black mb-3 vermelho_2">';
-								echo '<p class="card-text">'.number_format($volume_ap, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ap > 150){ 	
-							echo '<div class="card text-black mb-3 roxo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap, 2, '.', '').' mm/24h</p>';;									
-							echo '</div>';
-					}?>								
-					<!---------------------------------------- ALERTAS 36 HORAS -------------------------------------------->
-					<?php if($volume_ap_36 == 0){ 	
-							echo '<div class="card text-black mb-3 ap24sc">';
-								echo '<p class="card-text">0 mm  36h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ap_36 >= 0.2 and $volume_ap_36 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ap_36 > 70 and $volume_ap_36 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ap_36 > 100 and $volume_ap_36 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ap_36 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_36, 2, '.', '').' mm/36h</p>';;									
-							echo '</div>';
-					}?>	
-					<!---------------------------------------- ALERTAS 48 HORAS -------------------------------------------->
-					<?php if($volume_ap_48 == 0){ 	
-							echo '<div class="card text-black mb-3 ap24sc">';
-								echo '<p class="card-text">0 mm  48h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ap_48 >= 0.2 and $volume_ap_48 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ap_48 > 70 and $volume_ap_48 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ap_48 > 100 and $volume_ap_48 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ap_48 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_48, 2, '.', '').' mm/48h</p>';;									
-							echo '</div>';
-					}?>		
-					<!---------------------------------------- ALERTAS 54 HORAS -------------------------------------------->
-					<?php if($volume_ap_54 == 0){ 	
-							echo '<div class="card text-black mb-3 ap24sc">';
-								echo '<p class="card-text">0 mm  54h</p>';;									
-							echo '</div>';		
-					}?>
-					<?php if($volume_ap_54 >= 0.2 and $volume_ap_54 <= 70){ 	
-							echo '<div class="card text-black mb-3 amarelo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>							
-					<?php 	if($volume_ap_54 > 70 and $volume_ap_54 <= 100){ 		
-							echo '<div class="card text-black mb-3 laranja_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';							
-					}?>	
-					<?php 	if($volume_ap_54 > 100 and $volume_ap_54 <= 150){ 
-							echo '<div class="card text-black mb-3 vermelho_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>	
-					<?php if($volume_ap_54 > 150){ 		
-							echo '<div class="card text-black mb-3 roxo_2">';
-								echo '<p class="card-text">'.number_format($volume_ap_54, 2, '.', '').' mm/54h</p>';;									
-							echo '</div>';
-					}?>	
-				</div>							
-				<!--</div>
-			</div>-->
-
-		<div id="fim" style="padding-left: 15%">
+		<div id="fim" style="padding-left: 25%">
 			<div id="alerta" class="alerta"><img src="../img/alerta.png"><p class="Legenda">Legenda - Cores de alerta</p></div>
 			<br>
 		  	<!--<h5 style="text-align: center; padding-top: 25px; color: red;">SISTEMA EM TESTES</h5>-->
@@ -675,4 +551,4 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 		?>
 	</body>
 </html>
-</div>
+
