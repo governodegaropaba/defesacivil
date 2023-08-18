@@ -7,7 +7,6 @@ from csv import reader
 #import sys
 import datetime
 from requests.api import head
-from datetime import datetime, timedelta
 
 pasta = "/sites/defesacivil/public/csv/"
 ### REALIZA LOGIN NO CEMADEN ###
@@ -18,17 +17,13 @@ content = response.json()
 token = content['token']
 
 ### DEFINE A DATA CORRENTE PARA BUSCAR DADOS ###
-currentDateTime = datetime.now()
+currentDateTime = datetime.datetime.now()
 date = currentDateTime.date()
 ano = date.strftime("%Y")
 mes = date.strftime("%m")
 dia = date.strftime("%d")
-ini = ano+mes+dia+'0000'
-fim = ano+mes+dia+'2359'
-
-#ini = '202306142359'
-#fim = '202306162359'
-
+ini = '202302010000'
+fim = '202302112359'
 
 ### BUSCA DADOS DA GAMBOA ###
 sws_url='http://sws.cemaden.gov.br/PED/rest/pcds/dados_pcd?codigo=420570401A&fim='+fim+'&inicio='+ini+'&rede=11'
@@ -91,21 +86,21 @@ try:
                 if line.find('0.0;') == -1:
                     fw.write(line)
 except:
-    print("Oops! ocorreu erro")
+    print("Oops! someting error")
 
 try:
     with open(pasta+'final.csv', 'r') as fr:
         lines = fr.readlines()
 except:
-    print("Oops! ocorreu erro aqui")
+    print("Oops! someting error")
 
 with open(pasta+'final.csv', 'r') as csv_file:
     linhas = csv_file.read().splitlines()
     csv_reader = reader(linhas, delimiter = ';')
     list_of_rows = list(csv_reader)
     ### ELIMINA 3 ÚLTIMAS LINHAS QUE VEM EM BRANCO ###
-    qtde = len(list_of_rows)
-    #print('qtde->',qtde)
+    qtde = len(list_of_rows)-3
+
     file = open(pasta+'final.csv')
     contents = csv.reader(file)
 
@@ -117,7 +112,8 @@ with open(pasta+'final.csv', 'r') as csv_file:
     cursor = conn.cursor()
 
     for i in range(qtde):
-        if(i>=0 and list_of_rows[i][8] != '0.0'):
+        if(i>1 and list_of_rows[i][8] != '0.0'):
+            #print(list_of_rows[i])
             v_cod_estacao = list_of_rows[i][0]
             v_nome = list_of_rows[i][1]
             v_municipio = list_of_rows[i][2]
@@ -125,18 +121,13 @@ with open(pasta+'final.csv', 'r') as csv_file:
             v_latitude = list_of_rows[i][4]
             v_longitude = list_of_rows[i][5]
             v_datahora = list_of_rows[i][6]
-            v_datahora_gmt = list_of_rows[i][6]
-            v_datahora1 = list_of_rows[i][6]
-            v_datahora = datetime.strptime(v_datahora, '%Y-%m-%d %H:%M:%S')
-            v_datahora = v_datahora - timedelta(hours=3)
             v_sensor = list_of_rows[i][7]
             v_valor = list_of_rows[i][8]
             v_qualificacao = list_of_rows[i][9]
-            seleciona = "SELECT municipio FROM alerta_pcd WHERE cod_estacao = '"+v_cod_estacao+"' and datahora_gmt = '"+v_datahora1+"' and valor = "+v_valor+" and sensor = '"+v_sensor+"'"
+            seleciona = "SELECT municipio FROM alerta_pcd WHERE datahora_gmt = '"+v_datahora+"' and valor = "+v_valor+" and sensor = '"+v_sensor+"'"
             cursor.execute(seleciona)
             resultado = cursor.fetchall()
             if len(resultado)==0:  #Verifica se o retorno contém alguma linha
-                print('inserindo')
-                cursor.execute("INSERT INTO public.alerta_pcd (cod_estacao, nome, municipio, uf, latitude, longitude, datahora, sensor, valor, qualificacao, datahora_gmt) VALUES(%s, %s,%s, %s,%s, %s,%s, %s,%s, %s, %s)",(v_cod_estacao, v_nome, v_municipio, v_uf, v_latitude, v_longitude, v_datahora, v_sensor, v_valor, v_qualificacao, v_datahora_gmt))
+                cursor.execute("INSERT INTO public.alerta_pcd (cod_estacao, nome, municipio, uf, latitude, longitude, datahora, sensor, valor, qualificacao) VALUES(%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)",(v_cod_estacao, v_nome, v_municipio, v_uf, v_latitude, v_longitude, v_datahora, v_sensor, v_valor, v_qualificacao))
 conn.commit()
 conn.close()

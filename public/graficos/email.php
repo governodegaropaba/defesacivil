@@ -6,10 +6,10 @@ $alerta		= 'Chuva '.$volume.' mm';;
 
 $Vai = "Remetente: $nome\n\nAlerta: $alerta\n\n";
 
-require_once("phpmailer/class.phpmailer.php");
+require 'PHPMailer/lib/vendor/autoload.php';
 
 define('GUSER', 'dev@garopaba.sc.gov.br');	// <-- Insira aqui o seu GMail
-define('GPWD', '2020.acaba');		// <-- Insira aqui a senha do seu GMail
+define('GPWD', 'Dev@2023');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;

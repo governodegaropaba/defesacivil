@@ -35,14 +35,14 @@
 							Maior volume de chuvas 48 horas: 20/01 a 22/01/2021 - 177,18 mm<br>
 							Maior volume de chuvas 54 horas: 09/08 a 11/08/2022 - 163,81 mm<br>
 						</td>						
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2022" target="_blank" title="Visualizar Gráfico">2022</a></td>		
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2021" target="_blank" title="Visualizar Gráfico">2021</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2020" target="_blank" title="Visualizar Gráfico">2020</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2019" target="_blank" title="Visualizar Gráfico">2019</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2018" target="_blank" title="Visualizar Gráfico">2018</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2017" target="_blank" title="Visualizar Gráfico">2017</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2016" target="_blank" title="Visualizar Gráfico">2016</a></td>
-						<td class="anos" href="graficos_anual.php?id=ga&ano=2015" target="_blank" title="Visualizar Gráfico">2015</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2022" target="_blank" title="Visualizar Gráfico">2022</a></td>		
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2021" target="_blank" title="Visualizar Gráfico">2021</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2020" target="_blank" title="Visualizar Gráfico">2020</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2019" target="_blank" title="Visualizar Gráfico">2019</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2018" target="_blank" title="Visualizar Gráfico">2018</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2017" target="_blank" title="Visualizar Gráfico">2017</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2016" target="_blank" title="Visualizar Gráfico">2016</a></td>
+						<td><a class="anos" href="graficos_anual.php?id=ga&ano=2015" target="_blank" title="Visualizar Gráfico">2015</a></td>
 					</tr>
 					<tr style="background-color: #ffff;">
 						<th colspan="10"><br></th>

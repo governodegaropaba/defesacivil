@@ -348,9 +348,15 @@ while($row = pg_fetch_assoc($chuvas_exec_ap_54)){
 							if($volume_ga >= 0.2 and $volume_ga <= 70){ 	
 									echo '<td class="amarelo">'.number_format($volume_ga, 2, '.', '').' mm/24h</td>';										
 								}
+							if($volume_cd == 0){ 
+								echo '<td>0 mm  24h</td>';
+							}							
 							if($volume_cd >= 0.2 and $volume_cd <= 70){ 	
 									echo '<td class="amarelo">'.number_format($volume_cd, 2, '.', '').' mm/24h</td>';									
 								}
+							if($volume_ap == 0){ 
+								echo '<td>0 mm  24h</td>';
+							}							
 							if($volume_ap >= 0.2 and $volume_ap <= 70){ 	
 									echo '<td class="amarelo">'.number_format($volume_ap, 2, '.', '').' mm/24h</td>';									
 								}
