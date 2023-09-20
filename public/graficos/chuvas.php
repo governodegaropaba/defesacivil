@@ -1,5 +1,6 @@
 <?php
-include("../conect/conexao.php");
+//include("../conect/conexao.php");
+include("../conect/config.php");
 
 function data_br($data){
     return date("d/m H:i", strtotime($data));
@@ -17,8 +18,8 @@ function alertas($qtde, $volume, $cor, $ud, $estacao, $periodo, $local){
 
 		require 'PHPMailer/lib/vendor/autoload.php';
 
-		define('GUSER', 'dev@garopaba.sc.gov.br');	// <-- Insira aqui o seu GMail
-		define('GPWD', 'Dev@2023');		// <-- Insira aqui a senha do seu GMail
+		define('GUSER', MAIL_SERVERUSER);	// <-- Insira aqui o seu GMail
+		define('GPWD', MAIL_SERVERPASS);		// <-- Insira aqui a senha do seu EMail
 		
 		$assunto = "Alerta ".$cor." - ".$local;
 		
@@ -30,10 +31,10 @@ function alertas($qtde, $volume, $cor, $ud, $estacao, $periodo, $local){
 			$mail->SMTPDebug = 0;					// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 			$mail->SMTPAuth = true;					// Autenticação ativada
 			$mail->SMTPSecure = 'ssl';				// SSL REQUERIDO pelo GMail
-			$mail->Host = 'smtp.fecamsc.org.br';	// SMTP utilizado
-			$mail->Port = 465;  					// A porta 465 deverá estar aberta em seu servidor
-			$mail->Username = GUSER;
-			$mail->Password = GPWD;
+			$mail->Host = MAIL_SERVERHOST;	// SMTP utilizado
+			$mail->Port = MAIL_SERVERPORT;  					// A porta 465 deverá estar aberta em seu servidor
+			$mail->Username = MAIL_SERVERUSER;
+			$mail->Password = MAIL_SERVERPASS;
 			$mail->SetFrom($de, $de_nome);
 			$mail->Subject = $assunto;
 			$mail->Body = $corpo;
