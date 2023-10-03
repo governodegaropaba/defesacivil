@@ -13,7 +13,7 @@ Existem gráficos demonstrativos para cada volume de chuvas registrados nas últ
 Obs.: é necessário obter uma chave de acesso junto ao CEMADEN cadastrando um email e recebendo do CEMADEN uma senha para geração <br>
 de token que será usado no consumo das API´s.
 
-<b>IMPORTANTE: </b>Atualizar os arquivos "public/system_config.py" e "public/conect/config.php", preenchendo com as variáveis necessárias para funcionamento.<br>
+<font color="blue"><b>IMPORTANTE: </b>Atualizar os arquivos "public/system_config.py" e "public/conect/config.php", preenchendo com as variáveis necessárias para funcionamento.</font><br>
 
 <img src="figura.png">
 <img src="grafico.png">
